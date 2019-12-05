@@ -1,0 +1,34 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "edu.buaa"
+    },
+    "jhipsterVersion": "5.8.2",
+    "applicationType": "microservice",
+    "baseName": "edge",
+    "packageName": "edu.buaa",
+    "packageFolder": "edu/buaa",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OTRmMzBhNzliNjJiMmYwNjM0ZjI3YjA4OWYyZjllYzZiOTIzOTBiM2RhYTgyMmY4NjVmYmJhNzVlN2YyNTQ0ODdlMGU2NTY1ZDA2ZjdiNTkyMWZmNTY0NGVjZGZjMjU1MTdjMTEzOWM3MDZhMzI4OGNhMThjNDQwYTI0OWE4NDI=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
