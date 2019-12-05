@@ -29,13 +29,13 @@ spring:
         consul:
             discovery:
                prefer-ip-address: true
-            host: localhost
+            host: registry
             port: 8500
         stream:
             kafka:
                 binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+                    brokers: registry
+                    zk-nodes: locregistryalhost
             bindings:
                 output:
                     destination: topic-jhipster
@@ -43,7 +43,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/edge?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: root
-        password:
+        password: root
         hikari:
             poolName: Hikari
             auto-commit: false
