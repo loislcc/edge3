@@ -46,8 +46,11 @@ spring:
                     brokers: registry
                     zk-nodes: registry
             bindings:
-                output:
-                    destination: topic-jhipster
+                UpdateTargetChannel:
+                    destination: gateway
+                    group: targetDetection
+#                output:
+#                    destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/edge?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC

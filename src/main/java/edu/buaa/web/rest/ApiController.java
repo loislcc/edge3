@@ -3,6 +3,9 @@ package edu.buaa.web.rest;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import edu.buaa.domain.messaging.TargetNotification;
+import edu.buaa.service.messaging.UpdateTargetNotificationProducer;
+import edu.buaa.service.messaging.channel.UpdateTargetChannel;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +25,12 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class ApiController {
 
+
+    private UpdateTargetNotificationProducer updateTargetNotificationProducer;
+
+    public ApiController(UpdateTargetNotificationProducer updateTargetNotificationProducer) {
+        this.updateTargetNotificationProducer = updateTargetNotificationProducer;
+    }
     @RequestMapping(value = "/map", method = RequestMethod.GET)
     public
     @ResponseBody
@@ -33,6 +42,16 @@ public class ApiController {
        res.put("y","39.917274760176798");
         return res.toJSONString();
 
+    }
+
+    @GetMapping("/greetings/{count}")
+    public void produce(@PathVariable int count) {
+        if(count > 0) {
+            TargetNotification targetNotification=new TargetNotification();
+            targetNotification.setCategory("cat");
+            targetNotification.setLongitude(13.1123+count);
+            updateTargetNotificationProducer.sendMsgToGateway(targetNotification);
+        }
     }
 }
 
