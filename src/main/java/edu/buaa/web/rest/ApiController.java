@@ -49,7 +49,10 @@ public class ApiController {
         if(count > 0) {
             TargetNotification targetNotification=new TargetNotification();
             targetNotification.setCategory("cat");
-            targetNotification.setLongitude(13.1123+count);
+            targetNotification.setLongitude(0);
+            targetNotification.setSelfLatitude(0.000001);
+            targetNotification.setSelfLongitude(116.434924);
+            targetNotification.setSelfLatitude(39.915671);
             updateTargetNotificationProducer.sendMsgToGateway(targetNotification);
         }
     }
