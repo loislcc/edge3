@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.servlet.http.HttpServletResponse;
+import java.net.InetAddress;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -46,12 +47,15 @@ public class ApiController {
 
     @GetMapping("/detectTarget")
     public void detectTarget() {
+        InetAddress ia=null;
         TargetNotification targetNotification = new TargetNotification();
         SimpleDateFormat sdf = new SimpleDateFormat();
+        String localip=ia.getHostAddress();
+        targetNotification.setIp(localip);
         targetNotification.setCurrentTime(sdf.format(new Date()));
         targetNotification.setCategory("cat");
-        targetNotification.setLongitude(0.0001);
-        targetNotification.setLatitude(0);
+        targetNotification.setLongitude(116.434925);
+        targetNotification.setLatitude(39.915672);
         targetNotification.setSelfLongitude(116.35754);
         targetNotification.setSelfLatitude(39.987037);
         updateTargetNotificationProducer.sendMsgToGateway(targetNotification);
