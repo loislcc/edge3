@@ -44,19 +44,17 @@ public class ApiController {
 
     }
 
-    @GetMapping("/greetings/{count}")
-    public void produce(@PathVariable int count) {
-        if(count > 0) {
-            TargetNotification targetNotification=new TargetNotification();
-            SimpleDateFormat sdf=new SimpleDateFormat();
-            targetNotification.setCurrentTime(sdf.format(new Date()));
-            targetNotification.setCategory("cat");
-            targetNotification.setLongitude(0.0001);
-            targetNotification.setLatitude(0);
-            targetNotification.setSelfLongitude(116.35754);
-            targetNotification.setSelfLatitude(39.987037);
-            updateTargetNotificationProducer.sendMsgToGateway(targetNotification);
-        }
+    @GetMapping("/detectTarget")
+    public void detectTarget() {
+        TargetNotification targetNotification = new TargetNotification();
+        SimpleDateFormat sdf = new SimpleDateFormat();
+        targetNotification.setCurrentTime(sdf.format(new Date()));
+        targetNotification.setCategory("cat");
+        targetNotification.setLongitude(0.0001);
+        targetNotification.setLatitude(0);
+        targetNotification.setSelfLongitude(116.35754);
+        targetNotification.setSelfLatitude(39.987037);
+        updateTargetNotificationProducer.sendMsgToGateway(targetNotification);
     }
 }
 
