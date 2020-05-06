@@ -55,13 +55,13 @@ public class ApiController {
         String localip = getLocalIpAddr();
         targetNotification.setIp(localip);
         targetNotification.setCurrentTime(sdf.format(new Date()));
-        targetNotification.setCategory("cat");
-        targetNotification.setLongitude(116.423745);
-        targetNotification.setLatitude(39.911124);
+        targetNotification.setCategory("Car");
+        targetNotification.setLongitude(120.191157);
+        targetNotification.setLatitude(30.274664);
 //        targetNotification.setSelfLongitude(116.434924);
 //        targetNotification.setSelfLatitude(39.915671);116.433547
-        targetNotification.setSelfLongitude(116.433547);
-        targetNotification.setSelfLatitude(39.909462);
+        targetNotification.setSelfLongitude(120.188426);
+        targetNotification.setSelfLatitude(30.273884);
         updateTargetNotificationProducer.sendMsgToGateway(targetNotification);
     }
 
