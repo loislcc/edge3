@@ -24,13 +24,13 @@ import java.util.Collection;
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
-public class EdgeApp {
+public class Edge3App {
 
-    private static final Logger log = LoggerFactory.getLogger(EdgeApp.class);
+    private static final Logger log = LoggerFactory.getLogger(Edge3App.class);
 
     private final Environment env;
 
-    public EdgeApp(Environment env) {
+    public Edge3App(Environment env) {
         this.env = env;
     }
 
@@ -60,7 +60,7 @@ public class EdgeApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(EdgeApp.class);
+        SpringApplication app = new SpringApplication(Edge3App.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
