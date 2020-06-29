@@ -135,4 +135,14 @@ public class InfoResource {
         infoService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+    @GetMapping("/infos/getall")
+//    @Timed
+    public List<Info> get3infos() {
+        log.debug("REST request to get infos ");
+        List<Info> info = infoService.findAllInfo();
+//        for(Info info1: info)
+//            log.debug("all:{}",info1.toString());
+        return info;
+    }
 }
